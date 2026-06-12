@@ -1,0 +1,455 @@
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --muted: #555;
+  --accent: #0d2b4e;
+  --accent-light: #e4eaf2;
+  --border: #e0e0e0;
+  --nav-bg: #ffffff;
+  --max-width: 860px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* ── Navigation ───────────────────────────────── */
+nav {
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav .nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+nav .nav-name {
+  font-family: 'Arial', Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: var(--muted);
+  font-family: 'Arial', Helvetica, sans-serif;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.15s;
+}
+
+nav ul a:hover,
+nav ul a.active {
+  color: var(--accent);
+}
+
+/* ── Page wrapper ─────────────────────────────── */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3.5rem 2rem 5rem;
+}
+
+/* ── Hero / About ─────────────────────────────── */
+.hero {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-bottom: 3.5rem;
+}
+
+.hero-photo {
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  border: 3px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-family: sans-serif;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
+}
+
+.hero-text .subtitle {
+  color: var(--accent);
+  font-family: 'Arial', Helvetica, sans-serif;
+  font-size: 0.95rem;
+  margin-bottom: 0.15rem;
+}
+
+.hero-text .institution {
+  color: var(--muted);
+  font-family: 'Arial', Helvetica, sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 1.2rem;
+}
+
+.hero-text p {
+  color: var(--muted);
+  max-width: 540px;
+  margin-bottom: 1.2rem;
+}
+
+/* Social icons */
+.social-links {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  text-decoration: none;
+  color: var(--muted);
+  border-radius: 50%;
+  transition: color 0.15s, background 0.15s;
+}
+
+.social-links a:hover {
+  color: var(--accent);
+  background: var(--accent-light);
+}
+
+.social-links svg {
+  display: block;
+}
+
+/* ── Section headings ─────────────────────────── */
+h2 {
+  font-size: 1.25rem;
+  font-weight: normal;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Research cards ───────────────────────────── */
+.research-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.research-card {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.research-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.research-card .tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+
+.research-card .tag {
+  font-family: 'Arial', Helvetica, sans-serif;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.research-card .research-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  margin: 0.75rem 0 1rem;
+}
+
+/* Split row: text left, image right */
+.research-card--split {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 0.75rem;
+}
+
+.research-card--split p {
+  flex: 1 1 60%;
+}
+
+.research-card--split .research-img {
+  flex: 1 1 40%;
+  min-width: 0;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .research-card--split {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .research-card--split .research-img {
+    margin: 0.75rem 0 0;
+  }
+}
+
+.research-card p {
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+/* ── Skills grid ──────────────────────────────── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.skill-card {
+  background: #fafafa;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 0.75rem;
+  text-align: center;
+}
+
+.skill-card h3 {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.skill-card p {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 720px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── CV section ───────────────────────────────── */
+.cv-section {
+  margin-bottom: 2.5rem;
+}
+
+.cv-section h3 {
+  font-family: 'Arial', Helvetica, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.cv-entry {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cv-entry:last-child {
+  border-bottom: none;
+}
+
+.cv-entry-left strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.cv-entry-left span {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.cv-entry-right {
+  color: var(--muted);
+  font-family: 'Arial', Helvetica, sans-serif;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.cv-download {
+  margin-top: 1.5rem;
+}
+
+.cv-download a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: var(--accent);
+  font-family: 'Arial', Helvetica, sans-serif;
+  font-size: 0.9rem;
+  border: 1px solid var(--accent);
+  padding: 0.45rem 1rem;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.cv-download a:hover {
+  background: var(--accent-light);
+}
+
+/* ── Compact lists (Awards, Mentorship) ──────── */
+.compact-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.compact-entry {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.compact-entry:last-child {
+  border-bottom: none;
+}
+
+.compact-entry .label {
+  color: var(--text);
+}
+
+.compact-entry .meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.compact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.3rem 2rem;
+}
+
+.compact-grid .compact-entry {
+  border-bottom: none;
+  padding: 0.2rem 0;
+}
+
+@media (max-width: 600px) {
+  .compact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Contact ──────────────────────────────────── */
+.contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-block a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact-block a:hover {
+  text-decoration: underline;
+}
+
+/* ── Footer ───────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--muted);
+  font-family: 'Arial', Helvetica, sans-serif;
+  font-size: 0.8rem;
+}
+
+/* ── Responsive ───────────────────────────────── */
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .cv-entry {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+}
