@@ -19,8 +19,17 @@
   </div>
 </nav>
 
-<main>
-  <h2>What I'm Working On</h2>
+<main class="with-toc">
+  <aside class="toc">
+    <nav>
+      <a href="#working-on">What I'm Working On</a>
+      <a href="#publications">Publications</a>
+      <a href="#presentations">Presentations</a>
+    </nav>
+  </aside>
+
+  <div class="research-main">
+  <h2 id="working-on">What I'm Working On</h2>
 
   <p style="color: var(--muted); margin-bottom: 2.5rem;">
     My work uses naturalistic neuroimaging paradigms to study addiction. I am broadly interested in how
@@ -79,7 +88,7 @@
 
   </div>
 
-  <h2 style="margin-top: 3rem;">Publications</h2>
+  <h2 id="publications" style="margin-top: 3rem;">Publications</h2>
 
   <p style="color: var(--muted); font-size: 0.88rem; margin-bottom: 1.25rem;">* denotes equal contribution</p>
 
@@ -162,18 +171,23 @@
     </div>
   </div>
 
-  <h2 style="margin-top: 3rem;">Presentations</h2>
+  <h2 id="presentations" style="margin-top: 3rem; border-bottom: none;">Presentations</h2>
 
   <div class="cv-section">
     <h3>Oral Presentations</h3>
     <div class="cv-entry" style="display:block; padding: 0.6rem 0; border-bottom: 1px solid var(--border);">
       <span style="color:var(--muted); font-size:0.93rem;">
-        <strong>Natalie M*</strong>, Kronberg G*, Alia-Klein N, Goldstein R. (2026) Brain-to-brain neurofeedback to facilitate recovery in opioid use disorder. <em>American Society of Clinical Psychopharmacology</em>; Miami, FL.
+        Kronberg G*, <strong>McClain N*</strong>, Alia-Klein N, Goldstein R. (2026) Brain-to-brain neurofeedback to facilitate recovery in opioid use disorder. <em>American Society of Clinical Psychopharmacology</em>; Miami, FL. (presenter: <strong>McClain N</strong>)
       </span>
     </div>
     <div class="cv-entry" style="display:block; padding: 0.6rem 0; border-bottom: 1px solid var(--border);">
       <span style="color:var(--muted); font-size:0.93rem;">
         <strong>McClain N</strong>, Kronberg G, Drury K, Alia-Klein N, Goldstein RZ. (2026) Altered brain state dynamics during a drug-themed movie in opioid use disorder. <em>Gordon Research Conference: Neurobiology of Addiction</em>; Barcelona, Spain.
+      </span>
+    </div>
+    <div class="cv-entry" style="display:block; padding: 0.6rem 0; border-bottom: 1px solid var(--border);">
+      <span style="color:var(--muted); font-size:0.93rem;">
+        Huang Y, <strong>McClain N</strong>, Kronberg G, Butelman ER, Ceceli AO, King SG, Wong YY, Boros M, Drury R, Sinha R, Alia-Klein N, Goldstein RZ. (2026) Sex Differences and Hormonal Effects in Drug Cue-reactivity and its Regulation in Human Drug Addiction. <em>American College of Neuropsychopharmacology</em>; Nassau, Bahamas.
       </span>
     </div>
     <div class="cv-entry" style="display:block; padding: 0.6rem 0; border-bottom: 1px solid var(--border);">
@@ -207,11 +221,33 @@
     </div>
   </div>
 
+  </div>
 </main>
 
 <footer>
   &copy; 2026 Natalie McClain · Icahn School of Medicine at Mount Sinai
 </footer>
+
+<script>
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+    var sections = links.map(function (a) {
+      return document.querySelector(a.getAttribute('href'));
+    });
+    function onScroll() {
+      var pos = window.scrollY + 120;
+      var current = 0;
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i] && sections[i].offsetTop <= pos) current = i;
+      }
+      links.forEach(function (a, i) {
+        a.classList.toggle('active', i === current);
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
 
 </body>
 </html>
