@@ -309,6 +309,11 @@ h2 {
   font-size: 0.93rem;
 }
 
+.research-card p.research-credit {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
 /* ── Skills grid ──────────────────────────────── */
 .skills-grid {
   display: grid;
