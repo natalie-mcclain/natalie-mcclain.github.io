@@ -173,10 +173,16 @@ main.with-toc .research-main h2[id] {
 }
 
 .hero-text .subtitle {
+  display: inline-block;
   color: var(--accent);
-  font-family: 'Arial', Helvetica, sans-serif;
-  font-size: 1.15rem;
-  margin-bottom: 0.15rem;
+  font-family: 'SFMono-Regular', Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-size: 0.85rem;
+  text-transform: lowercase;
+  background: #f4f6f9;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.04rem 0.6rem;
+  margin-bottom: 0.4rem;
 }
 
 .hero-text .institution {
