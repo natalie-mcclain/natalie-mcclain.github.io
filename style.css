@@ -320,47 +320,6 @@ h2 {
   margin-top: 0.5rem;
 }
 
-/* ── Skills grid ──────────────────────────────── */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.75rem;
-  margin-bottom: 3rem;
-}
-
-.skill-card {
-  background: #fafafa;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem 0.75rem;
-  text-align: center;
-}
-
-.skill-card h3 {
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-}
-
-.skill-card p {
-  color: var(--muted);
-  font-size: 0.78rem;
-  line-height: 1.5;
-}
-
-@media (max-width: 720px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* ── CV section ───────────────────────────────── */
 .cv-section {
   margin-bottom: 2.5rem;
